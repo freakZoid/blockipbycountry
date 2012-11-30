@@ -39,7 +39,7 @@ do
 	tDB=$ZONEROOT/$c.zone
  
 	# get fresh zone file
-	$WGET -O $tDB $DLROOT/$c.zone
+	$WGET -O -q -S $tDB $DLROOT/$c.zone
  
 	# country specific log message
 	SPAMDROPMSG="$c Country Drop"
