@@ -50,6 +50,7 @@ do
 	do
 	   $IPT -A $SPAMLIST -s $ipblock -j LOG --log-prefix "$SPAMDROPMSG"
 	   $IPT -A $SPAMLIST -s $ipblock -j DROP
+	   echo -ne "."
 	done
 done
  
