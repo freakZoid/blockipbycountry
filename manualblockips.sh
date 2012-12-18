@@ -12,3 +12,5 @@ do
   $IPT -A INPUT -s $line -j LOG --log-prefix "manual ip drop"
   echo -ne "."
 done < $BLOCKIPSFILE
+
+$IPT save
