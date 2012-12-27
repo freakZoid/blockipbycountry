@@ -3,14 +3,19 @@
 IPT=/sbin/iptables
 BLOCKIPSFILE=IPs.txt
 
-while read line
+while IFS=$'\n' read -r line || [[ -n "$line" ]];
 do
-  $IPT -D INPUT -s $line -j DROP
-  $IPT -D INPUT -s $line -j LOG --log-prefix "manual ip drop"
+	if [ -n $line ]; then
+		if [ "$line" != "" ]; then
+			echo $line
+			$IPT -D INPUT -s $line -j DROP
+			$IPT -D INPUT -s $line -j LOG --log-prefix "manual ip drop"
 
-  $IPT -A INPUT -s $line -j DROP
-  $IPT -A INPUT -s $line -j LOG --log-prefix "manual ip drop"
-  echo -ne "."
+			$IPT -A INPUT -s $line -j DROP
+			$IPT -A INPUT -s $line -j LOG --log-prefix "manual ip drop"
+  			echo -ne "."
+		fi
+	fi
 done < $BLOCKIPSFILE
 
-$IPT save
+/etc/init.d/iptables save
