@@ -7,7 +7,6 @@ while IFS=$'\n' read -r line || [[ -n "$line" ]];
 do
 	if [ -n $line ]; then
 		if [ "$line" != "" ]; then
-			echo $line
 			$IPT -D INPUT -s $line -j DROP
 			$IPT -D INPUT -s $line -j LOG --log-prefix "manual ip drop"
 
