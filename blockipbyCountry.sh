@@ -1,6 +1,5 @@
 #!/bin/bash
-### Block all traffic from AFGHANISTAN (af) and CHINA (CN). Use ISO code ###
-ISO="af cn ps ru th eg sg ps fr hk ge de hu lk ua fr"
+ISO="af cn ps ru th eg sg ps fr hk ge de hu lk ua"
  
 ### Set PATH ###
 IPT=/sbin/iptables
