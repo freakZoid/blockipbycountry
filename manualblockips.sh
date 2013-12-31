@@ -26,10 +26,10 @@ do
 		if [ -n $line ]; then
 			if [ "$line" != "" ]; then
 				$IPT -D INPUT -s $line -j DROP
-				$IPT -D INPUT -s $line -j LOG --log-prefix "manual ip drop"
+				$IPT -D INPUT -s $line -j LOG --log-prefix "manual ip drop $c"
 
 				$IPT -A INPUT -s $line -j DROP
-				$IPT -A INPUT -s $line -j LOG --log-prefix "manual ip drop"
+				$IPT -A INPUT -s $line -j LOG --log-prefix "manual ip drop $c"
 				#echo -ne "."
 				echo $IPT -A INPUT -s $line -j DROP
 			fi
