@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ISO="TracedIPs.txt china.txt afghanistan.txt"
+ISO="TracedIPs.txt"
 IPT=/sbin/iptables
 # BLOCKIPSFILE=TracedIPs.txt
 
