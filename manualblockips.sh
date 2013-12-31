@@ -31,7 +31,7 @@ do
 				$IPT -A INPUT -s $line -j DROP
 				$IPT -A INPUT -s $line -j LOG --log-prefix "manual ip drop $c"
 				#echo -ne "."
-				echo $IPT -A INPUT -s $line -j DROP
+				echo $IPT -A INPUT -s $line -j DROP "manual ip drop $c"
 			fi
 		fi
 	done < $c
