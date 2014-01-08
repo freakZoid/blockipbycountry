@@ -38,3 +38,5 @@ do
 done
 
 /etc/init.d/iptables save
+/etc/init.d/iptables stop
+/etc/init.d/iptables start
