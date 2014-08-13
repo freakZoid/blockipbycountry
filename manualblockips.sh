@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ISO="TracedIPs-2.txt"
+ISO="TracedIPs-3.txt"
 IPT=/sbin/iptables
 # BLOCKIPSFILE=TracedIPs.txt
 
